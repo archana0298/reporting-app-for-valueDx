@@ -11,7 +11,7 @@ const Header: React.FC = () => {
   return 'Good Evening';
 };
   return (
-    <div className="bg-white shadow-sm px-6 py-4 mb-4 rounded-lg">
+    <div className="bg-white shadow-sm px-6 py-2 mb-4 rounded-lg">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-xl font-semibold text-gray-800 mb-0">

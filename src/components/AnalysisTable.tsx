@@ -187,7 +187,7 @@ const AnalysisTable: React.FC<AnalysisTableProps> = ({ data }) => {
       title="Analysis"
       className="shadow-sm hover:shadow-md transition-shadow duration-300"
     >
-      <div className="mb-4 flex flex-col lg:flex-row gap-4">
+      <div className="mb-1 flex flex-col lg:flex-row gap-2 mt-0">
         <Input
           placeholder="Search by name or type..."
           prefix={<SearchOutlined />}
@@ -283,6 +283,7 @@ const AnalysisTable: React.FC<AnalysisTableProps> = ({ data }) => {
         columns={columns}
         dataSource={filteredData}
         rowKey="id"
+         size="small" 
         pagination={{
           pageSize: 5,
           showSizeChanger: true,

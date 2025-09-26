@@ -7,6 +7,8 @@ import AnalysisTable from './components/AnalysisTable';
 import useResponsive from './hooks/useResponsive';
 import { analysisData } from './data/mockData';
 import { getMetricsData } from './utils/getMetricsData';
+import BarChartCard from './components/Charts/BarChartCard';
+import PieChartCard from './components/Charts/PieChartCard';
 
 const { Content, Sider } = Layout;
 
@@ -35,7 +37,7 @@ function App() {
           className={`transition-all duration-300 ${collapsed ? 'ml-20' : 'ml-64'
             }`}
         >
-          <Content className="p-2 bg-gray-100">
+          <Content className="p-2 bg-slate-50">
             <div className="mb-0.5">
               <Button
                 type="text"
@@ -49,8 +51,8 @@ function App() {
 
             <div className="space-y-6">
               <div>
-                <div className="mb-2">
-                  <h2 className="text-xl font-semibold text-gray-800 mb-1">Report</h2>
+                <div className="mb-1">
+                  {/* <h2 className="text-xl font-semibold text-gray-800 mb-1">Report</h2> */}
                   <p className="text-sm text-gray-500">
                     Here you can track your expenses and analyze reports efficiently.
                   </p>
@@ -58,6 +60,11 @@ function App() {
 
                 <MetricsCards data={metricsData} />
               </div>
+              <div className="p-0.1 grid grid-cols-2 gap-4 mb-0">
+                <BarChartCard />
+                <PieChartCard />
+              </div>
+
               <AnalysisTable data={analysisData} />
 
             </div>

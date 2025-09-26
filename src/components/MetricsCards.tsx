@@ -15,7 +15,7 @@ const MetricsCards: React.FC<MetricsCardsProps> = ({ data }) => {
         <Card 
           key={index}
           className={`${metric.color} border hover:shadow-md transition-all duration-300 transform hover:scale-105`}
-          bodyStyle={{ padding: '20px' }}
+          bodyStyle={{ padding: '8px' }}
         >
           <div className="space-y-2">
             <div className="text-sm font-medium text-gray-600">

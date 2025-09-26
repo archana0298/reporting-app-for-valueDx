@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Custom table styles */
+.custom-table .ant-table-thead > tr > th {
+  background: #fafafa;
+  font-weight: 600;
+  color: #262626;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.custom-table .ant-table-tbody > tr > td {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.custom-table .ant-table-tbody > tr:hover > td {
+  background: #fafafa;
+}
+
+/* Animation for cards */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Custom modal styles */
+.expense-modal .ant-modal-content {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.expense-modal .ant-modal-header {
+  background: #fafafa;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .mobile-hide {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .tablet-stack {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Loading animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Chart hover effects */
+.recharts-bar-rectangle:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Button hover animations */
+.ant-btn:hover {
+  transform: translateY(-1px);
+  transition: all 0.2s ease-in-out;
+}
+
+.ant-btn-primary:hover {
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Card hover effects */
+.ant-card:hover {
+  transform: translateY(-2px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Custom badge styles */
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-profit {
+  background-color: #f0f9ff;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.status-expense {
+  background-color: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+/* Smooth transitions for layout changes */
+.layout-transition {
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Enhanced table row hover */
+.ant-table-tbody > tr.ant-table-row:hover > td,
+.ant-table-tbody > tr > td.ant-table-cell-row-hover {
+  background: #f8fafc !important;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Enhanced focus states */
+.ant-input:focus,
+.ant-select-focused .ant-select-selector {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+/* Loading skeleton animation */
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeleton-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s infinite;
+}

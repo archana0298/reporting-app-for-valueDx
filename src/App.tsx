@@ -3,19 +3,16 @@ import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import MetricsCards from './components/MetricsCards';
-// import AnalysisChart from './components/AnalysisChart';
-// import ExpenseReportTable from './components/ExpenseReportTable';
 import AnalysisTable from './components/AnalysisTable';
 import useResponsive from './hooks/useResponsive';
-import { metricsData, analysisData } from './data/mockData';
-// import type { ExpenseData } from './data/mockData';
+import { analysisData } from './data/mockData';
+import { getMetricsData } from './utils/getMetricsData';
 
 const { Content, Sider } = Layout;
 
 function App() {
   const { collapsed, setCollapsed } = useResponsive();
-  // const [expenseTableData, setExpenseTableData] = useState<ExpenseData[]>(expenseData);
-  
+  const metricsData = getMetricsData(analysisData);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -61,22 +58,8 @@ function App() {
 
                 <MetricsCards data={metricsData} />
               </div>
-
-
-
               <AnalysisTable data={analysisData} />
-              {/* <div className="grid grid-cols-12 gap-2">
-  <div className="col-span-6 xl:col-span-4">
-    <AnalysisChart data={chartData} />
-  </div>
 
-  <div className="col-span-6 xl:col-span-8">
-    <ExpenseReportTable 
-      data={expenseTableData} 
-      onDataChange={setExpenseTableData} 
-    />
-  </div>
-</div> */}
             </div>
           </Content>
         </Layout>
